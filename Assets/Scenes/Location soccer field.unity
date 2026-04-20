@@ -387,9 +387,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
+--- !u!1001 &206599216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1663610776}
+    m_Modifications:
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661073620808731575, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_Name
+      value: Confetti Explosion - Stars
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
 --- !u!1 &303164554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4750284359945493098, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
+  m_PrefabInstance: {fileID: 3949143139653623698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &303164555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5379469325358153936, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
   m_PrefabInstance: {fileID: 3949143139653623698}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &303164559
@@ -407,6 +469,7 @@ MonoBehaviour:
   teamName: Team B
   goalAreaRadius: 2
   returnCameraDelay: 2
+  goalParticle: {fileID: 621576940}
 --- !u!65 &303164560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1149,6 +1212,85 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
   m_PrefabInstance: {fileID: 199845185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &616350699
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 303164555}
+    m_Modifications:
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661073620808731575, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+      propertyPath: m_Name
+      value: Confetti Explosion - Stars
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+--- !u!4 &621576938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+  m_PrefabInstance: {fileID: 616350699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &621576940 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4240034784475640689, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+  m_PrefabInstance: {fileID: 616350699}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &664154733
 PrefabInstance:
@@ -2739,6 +2881,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
   m_PrefabInstance: {fileID: 553407423}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1306207736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 759546428266998935, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+  m_PrefabInstance: {fileID: 206599216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1306207738 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4240034784475640689, guid: 7d05e4127f42c914aa5d5902442e058e, type: 3}
+  m_PrefabInstance: {fileID: 206599216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357024772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +3104,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4750284360416980202, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
   m_PrefabInstance: {fileID: 3949143139653623698}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1663610776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5379469326095955536, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
+  m_PrefabInstance: {fileID: 3949143139653623698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1663610780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,6 +3124,7 @@ MonoBehaviour:
   teamName: Team A
   goalAreaRadius: 2
   returnCameraDelay: 2
+  goalParticle: {fileID: 1306207738}
 --- !u!65 &1663610781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3434,7 +3592,13 @@ PrefabInstance:
     - {fileID: 7578791292503854487, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
     - {fileID: 7578791293512219415, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5379469326095955536, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1306207736}
+    - targetCorrespondingSourceObject: {fileID: 5379469325358153936, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 621576938}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4750284360416980202, guid: f3059fe87515fa740afe2ac7e9819671, type: 3}
       insertIndex: -1

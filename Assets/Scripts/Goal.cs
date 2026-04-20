@@ -1,11 +1,11 @@
 using UnityEngine;
-using System.Collections;
 
 public class Goal : MonoBehaviour
 {
     [SerializeField] private string teamName = "Team A";
     [SerializeField] private float goalAreaRadius = 2f;
     [SerializeField] private float returnCameraDelay = 2f;
+    [SerializeField] private ParticleSystem goalParticle;
     
     private static Goal[] allGoals;
     private CinemaChineManager cameraManager;
@@ -14,11 +14,35 @@ public class Goal : MonoBehaviour
     {
         allGoals = FindObjectsByType<Goal>(FindObjectsSortMode.None);
         cameraManager = FindFirstObjectByType<CinemaChineManager>();
+        
+        if (cameraManager == null)
+            Debug.LogError($"❌ Goal {teamName}: Không tìm thấy CinemaChineManager!");
+        
+        if (goalParticle == null)
+            Debug.LogWarning($"⚠️ Goal {teamName}: Không có ParticleSystem!");
     }
 
     public bool IsBallInside(Vector3 ballPosition)
     {
         return Vector3.Distance(transform.position, ballPosition) <= goalAreaRadius;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Ball ball = other.GetComponent<Ball>();
+        if (ball != null)
+        {
+            OnBallEntered(ball);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Ball ball = collision.gameObject.GetComponent<Ball>();
+        if (ball != null)
+        {
+            OnBallEntered(ball);
+        }
     }
 
     public static Goal GetNearestGoal(Vector3 position)
@@ -58,23 +82,23 @@ public class Goal : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        Ball ball = other.GetComponent<Ball>();
-        if (ball != null)
-            OnBallEntered(ball);
-
-    }
-
     public void OnBallEntered(Ball ball)
     {
+        Debug.Log($"⚽ GOAL! {teamName} ghi được bàn!");
 
         ball.Stop();
 
-        if (cameraManager != null)
-            cameraManager.ReturnToPlayerAfterDelay(returnCameraDelay);
+        if (goalParticle != null)
+        {
+            Debug.Log($"✨ Chạy particle tại {teamName}!");
+            goalParticle.Play();
+        }
 
+        if (cameraManager != null)
+        {
+            Debug.Log($"📹 {teamName}: Gọi ReturnToPlayerAfterDelay({returnCameraDelay}s)");
+            cameraManager.ReturnToPlayerAfterDelay(returnCameraDelay);
+        }
     }
 
     public string GetTeamName()
