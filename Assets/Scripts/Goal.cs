@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField] private string teamName = "Team A";
     [SerializeField] private float goalAreaRadius = 2f;
     [SerializeField] private float returnCameraDelay = 2f;
     [SerializeField] private ParticleSystem goalParticle;
@@ -14,12 +13,6 @@ public class Goal : MonoBehaviour
     {
         allGoals = FindObjectsByType<Goal>(FindObjectsSortMode.None);
         cameraManager = FindFirstObjectByType<CinemaChineManager>();
-        
-        if (cameraManager == null)
-            Debug.LogError($"❌ Goal {teamName}: Không tìm thấy CinemaChineManager!");
-        
-        if (goalParticle == null)
-            Debug.LogWarning($"⚠️ Goal {teamName}: Không có ParticleSystem!");
     }
 
     public bool IsBallInside(Vector3 ballPosition)
@@ -84,25 +77,14 @@ public class Goal : MonoBehaviour
 
     public void OnBallEntered(Ball ball)
     {
-        Debug.Log($"⚽ GOAL! {teamName} ghi được bàn!");
 
         ball.Stop();
 
         if (goalParticle != null)
-        {
-            Debug.Log($"✨ Chạy particle tại {teamName}!");
             goalParticle.Play();
-        }
 
         if (cameraManager != null)
-        {
-            Debug.Log($"📹 {teamName}: Gọi ReturnToPlayerAfterDelay({returnCameraDelay}s)");
             cameraManager.ReturnToPlayerAfterDelay(returnCameraDelay);
-        }
     }
 
-    public string GetTeamName()
-    {
-        return teamName;
-    }
 }

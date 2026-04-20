@@ -466,7 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960143a5ac56af24a8b73833b1d28d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Goal
-  teamName: Team B
   goalAreaRadius: 2
   returnCameraDelay: 2
   goalParticle: {fileID: 621576940}
@@ -1032,30 +1031,11 @@ RectTransform:
   m_AnchoredPosition: {x: 395, y: -215}
   m_SizeDelta: {x: 98, y: 56}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &533083098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
-  m_PrefabInstance: {fileID: 1713309965}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &533083102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
   m_PrefabInstance: {fileID: 1713309965}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &533083105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533083098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc7758d7a2cde647943f39d5e9b7ea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ball
-  detectionRadius: 1
-  kickForce: 15
 --- !u!1001 &553407423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3121,7 +3101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960143a5ac56af24a8b73833b1d28d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Goal
-  teamName: Team A
   goalAreaRadius: 2
   returnCameraDelay: 2
   goalParticle: {fileID: 1306207738}
@@ -3263,17 +3242,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002177266136838638, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
-      propertyPath: detectionRadius
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 533083105}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
 --- !u!1 &1841297054
 GameObject:

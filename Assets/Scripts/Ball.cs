@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float detectionRadius = 1f;
-    [SerializeField] private float kickForce = 20f;
+    [SerializeField] private float detectionRadius = 1.2f;
+    [SerializeField] private float kickForce = 15f;
     
     private Rigidbody rb;
     private bool isFlying = false;
@@ -13,9 +13,6 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cameraManager = FindFirstObjectByType<CinemaChineManager>();
-        
-        if (cameraManager == null)
-            Debug.LogError($"❌ Ball: Không tìm thấy CinemaChineManager!");
         
         BallManager.RegisterBall(this);
     }
@@ -56,5 +53,10 @@ public class Ball : MonoBehaviour
         isFlying = false;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }

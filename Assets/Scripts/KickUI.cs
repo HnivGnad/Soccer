@@ -12,7 +12,7 @@ public class KickUI : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.3f;
     [SerializeField] private float dimmedAlpha = 0.3f;
     [SerializeField] private float brightAlpha = 1f;
-    [SerializeField] private float ballSearchRadius = 5f;
+    [SerializeField] private float ballSearchRadius = 1.5f;
 
     private Player player;
     private Ball currentNearestBall;
