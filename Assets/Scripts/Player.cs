@@ -56,6 +56,10 @@ public class Player : MonoBehaviour
         HandleRotation();
     }
 
+    private void FixedUpdate()
+    {
+    }
+
     public void SetVelocity(float xVelocity, float yVelocity, float zVelocity)
     {
         rb.linearVelocity = new Vector3(xVelocity, yVelocity, zVelocity);

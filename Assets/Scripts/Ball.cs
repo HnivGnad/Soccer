@@ -2,43 +2,40 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float detectionRadius = 2f;
+    [SerializeField] private float detectionRadius = 1f;
     [SerializeField] private float kickForce = 20f;
     
     private Rigidbody rb;
+    private bool isFlying = false;
+    private CinemaChineManager cameraManager;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cameraManager = FindFirstObjectByType<CinemaChineManager>();
         
-        // ✅ THÊM: Đăng ký Ball này với Manager
+        if (cameraManager == null)
+            Debug.LogError($"❌ Ball: Không tìm thấy CinemaChineManager!");
+        
         BallManager.RegisterBall(this);
     }
 
-    /// <summary>
-    /// Kiểm tra xem người chơi có gần bóng không
-    /// </summary>
     public bool IsPlayerNear(Vector3 playerPosition)
     {
         return Vector3.Distance(transform.position, playerPosition) <= detectionRadius;
     }
 
-    /// <summary>
-    /// Sút bóng về phía khung thành gần nhất
-    /// </summary>
     public void KickToNearestGoal(Vector3 kickDirection)
     {
         if (rb == null) rb = GetComponent<Rigidbody>();
+        
+        rb.linearVelocity = kickDirection.normalized * kickForce;
+        isFlying = true;
 
-        // Áp dụng lực sút
-        rb.linearVelocity = kickDirection.normalized * kickForce;   
-
-        Debug.Log($"🦵 Kicked ball! Direction: {kickDirection.normalized}, Force: {kickForce}");
+        if (cameraManager != null)
+            cameraManager.FollowBall(transform);
     }
 
-    /// <summary>
-    /// Lấy vị trí bóng hiện tại
-    /// </summary>
     public Vector3 GetPosition()
     {
         return transform.position;
@@ -47,5 +44,17 @@ public class Ball : MonoBehaviour
     public float GetDetectionRadius()
     {
         return detectionRadius;
+    }
+
+    public bool IsFlying()
+    {
+        return isFlying;
+    }
+
+    public void Stop()
+    {
+        isFlying = false;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }

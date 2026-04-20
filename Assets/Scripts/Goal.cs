@@ -1,28 +1,26 @@
 using UnityEngine;
+using System.Collections;
 
 public class Goal : MonoBehaviour
 {
     [SerializeField] private string teamName = "Team A";
-    [SerializeField] private float goalAreaRadius = 2f;  // ✅ THÊM: Bán kính khung thành
+    [SerializeField] private float goalAreaRadius = 2f;
+    [SerializeField] private float returnCameraDelay = 2f;
     
     private static Goal[] allGoals;
+    private CinemaChineManager cameraManager;
 
     private void Start()
     {
         allGoals = FindObjectsByType<Goal>(FindObjectsSortMode.None);
+        cameraManager = FindFirstObjectByType<CinemaChineManager>();
     }
 
-    /// <summary>
-    /// Kiểm tra xem bóng có nằm trong khung thành không
-    /// </summary>
     public bool IsBallInside(Vector3 ballPosition)
     {
         return Vector3.Distance(transform.position, ballPosition) <= goalAreaRadius;
     }
 
-    /// <summary>
-    /// Lấy khung thành gần nhất
-    /// </summary>
     public static Goal GetNearestGoal(Vector3 position)
     {
         if (allGoals == null || allGoals.Length == 0)
@@ -44,9 +42,6 @@ public class Goal : MonoBehaviour
         return nearest;
     }
 
-    /// <summary>
-    /// ✅ THÊM: Kiểm tra xem bóng có nằm trong bất kỳ khung thành nào không
-    /// </summary>
     public static bool IsBallInAnyGoal(Vector3 ballPosition)
     {
         if (allGoals == null || allGoals.Length == 0)
@@ -63,9 +58,23 @@ public class Goal : MonoBehaviour
         return false;
     }
 
-    public void OnBallEntered()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"⚽ GOAL! {teamName} ghi được bàn!");
+        
+        Ball ball = other.GetComponent<Ball>();
+        if (ball != null)
+            OnBallEntered(ball);
+
+    }
+
+    public void OnBallEntered(Ball ball)
+    {
+
+        ball.Stop();
+
+        if (cameraManager != null)
+            cameraManager.ReturnToPlayerAfterDelay(returnCameraDelay);
+
     }
 
     public string GetTeamName()
